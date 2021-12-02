@@ -1,0 +1,176 @@
+﻿@import url("Fonts.css");
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
+#introduction {
+    width: 90%;
+    max-width: 1550px;
+    margin: 10em 0 !important;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+}
+#introduction h1 {
+    margin:0;
+    font-size: 4em;
+    font-family: Montserrat-SemiBold;
+    color:white;
+    letter-spacing: 2.5px;
+    text-shadow: 6px 6px 3.7px rgba(0, 0, 0, 0.25999999046325684);
+    white-space:nowrap;
+}
+#introduction img {
+    box-shadow: 12px 15px 4.017167568206787px rgba(0, 0, 0, 0.25999999046325684);
+    width:22em;
+    resize:none;
+}
+#links{
+    margin-top: 2%;
+    margin-right: .9%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width: 90%;
+    max-width:700px;
+}
+#links a{
+    cursor:pointer;
+}
+#links a img {
+    filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.25999999046325684));
+    transition: all 500ms;
+}
+#links a img:hover{
+    transform:scale(1.05);
+}
+
+#arrow {
+    margin-top: 7em;
+    cursor: pointer;
+    animation: bounce 2s 3s infinite;
+}
+#arrow :hover{
+    
+}
+@keyframes bounce{
+    0%, 25%, 50%, 75%, 100%{
+        transform:translateY(0);
+    }
+    10%{
+        transform:translateY(-10px)
+    }
+    30% {
+        transform: translateY(0)
+    }
+    50% {
+        transform: translateY(-10px)
+    }
+}
+
+
+
+/*media query for formatting when resizing*/
+@media only screen and (max-width:1450px){
+    #introduction {
+        margin: 8em 0 !important;
+    }
+    #introduction h1{
+        font-size: 3em;
+    }
+    #introduction img {
+        width: 16.5em;
+    }
+    #links a img{
+        width:95%;
+    }
+    #links{
+        margin-top:1.8%;
+    }
+}
+@media only screen and (max-width:1225px) {
+    #introduction {
+        margin: 7em 0 !important;
+    }
+    #introduction h1 {
+        font-size: 2.5em;
+        white-space:normal;
+    }
+    #introduction img{
+        width: 13.65em;
+    }
+    #links a img {
+        width: 90%;
+    }
+
+    #links {
+        margin-top: 1.6%;
+    }
+    
+}
+@media only screen and (max-width:720px) {
+    #introduction {
+        margin: 6em 0 !important;
+    }
+    #introduction h1 {
+        font-size: 2em;
+        white-space: normal;
+    }
+    #introduction img {
+        width: 13.65em;
+    }
+    #links {
+        margin-top: 1.4%;
+        width:80%;
+    }
+    #arrow{
+        width:5.5%;
+        margin-top:12%;
+    }
+}
+@media only screen and (max-width:650px) {
+    #introduction {
+        margin: 5em 0 !important;
+    }
+    #introduction h1 {
+        font-size: 1.7em;
+        white-space: normal;
+    }
+
+    #introduction img {
+        width: 9.65em;
+    }
+    #links {
+        margin-top: 1%;
+    }
+}
+@media only screen and (max-width:550px) {
+    #introduction {
+        margin: 4.7em 0 !important;
+    }
+    #introduction h1 {
+        font-size: 1.3em;
+        white-space: normal;
+    }
+
+    #introduction img {
+        width: 9.65em;
+    }
+    #links {
+        margin-top: .5%;
+    }
+}
+@media only screen and (max-width:460px) {
+    #introduction {
+        margin: 4.5em 0 !important;
+    }
+    #introduction h1 {
+        font-size: 1em;
+        white-space: normal;
+        letter-spacing: .13em;
+    }
+
+    #introduction img {
+        width: 8em;
+    }
+}

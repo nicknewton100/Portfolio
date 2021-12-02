@@ -1,0 +1,45 @@
+﻿@{
+    var controller = Context.Request.RouteValues["controller"]?.ToString();
+    System.Diagnostics.Debug.WriteLine(controller.Equals("Home") ? "class=active" : "");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+    <title>@ViewData["Title"] - Portfolio_Project</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div id="container">
+        <!--<div id="bg">
+        <object data="~/images/Background.svg"></object>
+    </div>-->
+        <header>
+            <nav class="navbar">
+                <div class="navtext">
+                    <div id="home" @(controller == "Home" ? "class=active" : "")>
+                        <a asp-controller="Home">Home</a>
+                    </div>
+                    <div id="rightnavcontainer">
+                        <div id="projects" @(controller.Equals("Projects") ? "class=active" : "")>
+                            <a asp-controller="Projects">Projects</a>
+                        </div>
+                        <div id="contactme" @(controller.Equals("Contact") ? "class=active" : "")>
+                            <a>Contact me</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>       
+        <main role="main" class="">
+                @RenderBody()
+        </main>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+    </div>
+</body>
+</html>
