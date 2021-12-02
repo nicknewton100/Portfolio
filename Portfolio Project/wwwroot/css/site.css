@@ -111,3 +111,9 @@ header{
         font-size: 90% !important;
     }
 }
+/*media query for changing elements when height changes*/
+@media only screen and (max-height: 1130px) {
+    .navbar {
+        font-size: 140% !important;
+    }
+}

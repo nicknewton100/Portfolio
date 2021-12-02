@@ -27,8 +27,7 @@
 }
 #links{
     margin-top: 2%;
-    margin-right: .9%;
-    display:flex;
+    display:inline-flex;
     justify-content:space-between;
     align-items:center;
     width: 90%;
@@ -49,9 +48,7 @@
     margin-top: 7em;
     cursor: pointer;
     animation: bounce 2s 3s infinite;
-}
-#arrow :hover{
-    
+    margin-right: 1px;
 }
 @keyframes bounce{
     0%, 25%, 50%, 75%, 100%{
@@ -82,7 +79,7 @@
         width: 16.5em;
     }
     #links a img{
-        width:95%;
+        width:11em;
     }
     #links{
         margin-top:1.8%;
@@ -100,7 +97,7 @@
         width: 13.65em;
     }
     #links a img {
-        width: 90%;
+        width: 10em;
     }
 
     #links {
@@ -123,6 +120,9 @@
         margin-top: 1.4%;
         width:80%;
     }
+    #links a img {
+        width: 9em;
+    }
     #arrow{
         width:5.5%;
         margin-top:12%;
@@ -139,6 +139,9 @@
 
     #introduction img {
         width: 9.65em;
+    }
+    #links a img {
+        width: 8em;
     }
     #links {
         margin-top: 1%;
@@ -159,6 +162,9 @@
     #links {
         margin-top: .5%;
     }
+    #links a img {
+        width: 7em;
+    }
 }
 @media only screen and (max-width:460px) {
     #introduction {
@@ -172,5 +178,33 @@
 
     #introduction img {
         width: 8em;
+    }
+}
+
+
+/*media query for height of page*/
+
+@media only screen and (max-height: 1130px) and (min-width: 1225px) {
+    #introduction {
+        margin: 5.5em !important;
+    }
+
+        #introduction h1 {
+            font-size: 3.3em;
+            white-space: normal;
+        }
+
+        #introduction img {
+            width: 18.65em;
+        }
+
+    #links {
+        margin-top: 1%;
+        width: 80%;
+    }
+
+    #arrow {
+        margin-top: 3%;
+        margin-left: .4%;
     }
 }
