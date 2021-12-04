@@ -29,9 +29,14 @@
     margin-top: 2%;
     display:inline-flex;
     justify-content:space-between;
-    align-items:center;
+    align-items:baseline;
     width: 90%;
-    max-width:700px;
+    max-width:fit-content;
+    min-width:fit-content;
+}
+.col-3{
+    max-width:none;
+    min-width: 33%;
 }
 #links a{
     cursor:pointer;
@@ -39,6 +44,7 @@
 #links a img {
     filter: drop-shadow(4px 4px 3px rgba(0, 0, 0, 0.25999999046325684));
     transition: all 500ms;
+    width: 12em;
 }
 #links a img:hover{
     transform:scale(1.05);
@@ -49,6 +55,7 @@
     cursor: pointer;
     animation: bounce 2s 3s infinite;
     margin-right: 1px;
+    width:21%;
 }
 @keyframes bounce{
     0%, 25%, 50%, 75%, 100%{
@@ -79,7 +86,7 @@
         width: 16.5em;
     }
     #links a img{
-        width:11em;
+
     }
     #links{
         margin-top:1.8%;
@@ -124,8 +131,8 @@
         width: 9em;
     }
     #arrow{
-        width:5.5%;
-        margin-top:12%;
+        width:20.5%;
+        margin-top:50%;
     }
 }
 @media only screen and (max-width:650px) {
@@ -165,6 +172,7 @@
     #links a img {
         width: 7em;
     }
+
 }
 @media only screen and (max-width:460px) {
     #introduction {
@@ -175,28 +183,33 @@
         white-space: normal;
         letter-spacing: .13em;
     }
-
     #introduction img {
         width: 8em;
     }
+    #links a img {
+        width: 5.5em;
+    }
 }
-
-
+@media only screen and (max-width:320px){
+    #links a img {
+        width: 4.5em;
+    }
+}
 /*media query for height of page*/
-
 @media only screen and (max-height: 1130px) and (min-width: 1225px) {
     #introduction {
         margin: 5.5em !important;
+        max-width: 1350px;
     }
 
-        #introduction h1 {
-            font-size: 3.3em;
-            white-space: normal;
-        }
+    #introduction h1 {
+        font-size: 3.3em;
+        white-space: normal;
+    }
 
-        #introduction img {
-            width: 18.65em;
-        }
+    #introduction img {
+        width: 18.65em;
+    }
 
     #links {
         margin-top: 1%;
@@ -204,7 +217,7 @@
     }
 
     #arrow {
-        margin-top: 3%;
+        margin-top: 35%;
         margin-left: .4%;
     }
 }
