@@ -1,0 +1,54 @@
+﻿@import url("Fonts.css");
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+    font-size: 80px;
+    font-family: Montserrat-Regular;
+    text-shadow: 6px 6px 3.7px rgba(0, 0, 0, 0.25999999046325684);
+}
+#tagholder {
+    width: 90%;
+    max-width: 1200px;
+    margin: 3em 0em 5em 0em !important;
+    display: flex;
+    justify-content:center;
+}
+button {
+    font-family:Montserrat-Regular;
+    background-color: #ddd;
+    border: none;
+    color: black;
+    font-size:1.2em;
+    margin: 0em .3em 1em .3em;
+    border-radius: 15px;
+    padding: 0 1.5%;
+    box-shadow: 3px 4px 3.7px rgba(0, 0, 0, 0.25999999046325684);
+}
+#tagholder button:hover{
+    transform:scale(1.05);
+}
+#tagholder button:active {
+    color: white;
+    background-color: #4a4a4a;
+}
+#tagholder button:focus {
+    outline: none;
+}
+#projectholder {
+    max-width:70%;
+    display: flex;
+    justify-content: center;
+    justify-items:center;
+}
+#projectholder img{
+    max-width:28%;
+    margin: 2em;
+}
+#projectholder img:hover{
+    opacity:70%;
+}

@@ -1,6 +1,5 @@
 ﻿@{
     var controller = Context.Request.RouteValues["controller"]?.ToString();
-    System.Diagnostics.Debug.WriteLine(controller.Equals("Home") ? "class=active" : "");
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -13,9 +12,6 @@
 </head>
 <body>
     <div id="container">
-        <!--<div id="bg">
-        <object data="~/images/Background.svg"></object>
-    </div>-->
         <header>
             <nav class="navbar">
                 <div class="navtext">
