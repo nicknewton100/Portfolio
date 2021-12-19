@@ -40,14 +40,14 @@ button {
     outline: none;
 }
 #projectholder {
-    max-width:70%;
-    display: flex;
-    justify-content: center;
-    justify-items:center;
+    max-width: 66%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(1em, 24em));
+    gap: 2em;
+    place-items:center;
 }
 #projectholder img{
-    max-width:28%;
-    margin: 2em;
+    width:24em;
 }
 #projectholder img:hover{
     opacity:70%;
