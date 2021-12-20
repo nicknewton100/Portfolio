@@ -23,21 +23,21 @@ button {
     background-color: #ddd;
     border: none;
     color: black;
-    font-size:1.2em;
+    font-size:1.25em;
     margin: 0em .3em 1em .3em;
     border-radius: 15px;
     padding: 0 1.5%;
     box-shadow: 3px 4px 3.7px rgba(0, 0, 0, 0.25999999046325684);
     backface-visibility: hidden;
-    transform: translateZ(0);
+    transform:scale(.95) translateZ(0);
+    transition:ease-in-out 200ms;
 }
-#tagholder button:hover {
-    
-    transform:scale(1.05) translateZ(0);
+#tagholder button:hover:not(.activetag) {
+    background-color: #B5B5B5;
 }
-#tagholder button:active {
+#tagholder button:active, .activetag {
     color: white;
-    background-color: #4a4a4a;
+    background-color: #4a4a4a !important;
 }
 #tagholder button:focus {
     outline: none;
@@ -49,15 +49,16 @@ button {
     gap: 2.5em;
     place-items:center;
 }
-#projectholder img{
-    width:24em;
+#projectholder img{    
+    width:24.24em;
     box-shadow: 8px 10px 3.7px rgba(0, 0, 0, 0.25999999046325684);
     transition: ease-in-out 500ms;
     backface-visibility: hidden;
     transform: translateZ(0);
+    transform:scale(.99);
 }
 #projectholder img:hover{
-    transform:perspective(2px) scale(1.01) translate3d(0,0,0);
+    transform: scale(1) translate3d(0,0,0);
     cursor:pointer;
     box-shadow: 10px 12px 3.7px rgba(0, 0, 0, 0.25999999046325684);
 }
