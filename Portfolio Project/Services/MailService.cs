@@ -28,7 +28,8 @@ namespace Portfolio_Project.Services
             builder.TextBody = String.Format(" Name: {0} \n Email: {1} \n Company: {2} \n Phone Number: {3} \n\n Message: {4}", contactViewModel.Name, contactViewModel.Email, contactViewModel.Company, contactViewModel.PhoneNumber, contactViewModel.Message);
             email.Body = builder.ToMessageBody();
             using var smtp = new SmtpClient();
-            smtp.Connect(_mailSettings.Host, _mailSettings.Port, false);
+            smtp.CheckCertificateRevocation = false;
+            await smtp.ConnectAsync(_mailSettings.Host, _mailSettings.Port, SecureSocketOptions.StartTlsWhenAvailable);
             smtp.Authenticate(_mailSettings.Mail, _mailSettings.Password);
             await smtp.SendAsync(email);
             smtp.Disconnect(true);

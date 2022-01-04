@@ -19,9 +19,9 @@ namespace Portfolio_Project.Controllers
         {
             return View();
         }
-        public IActionResult SendEmail(ContactViewModel model)
+        public async Task<IActionResult> SendEmail(ContactViewModel model)
         {
-            mailService.SendEmailAsync(model);
+            await mailService.SendEmailAsync(model);
             return RedirectToAction("Index");
         }
     }
