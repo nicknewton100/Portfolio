@@ -10,6 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Portfolio_Project.Models;
+using Portfolio_Project.Models.Settings;
+using Portfolio_Project.Services;
 
 namespace Portfolio_Project
 {
@@ -30,6 +32,8 @@ namespace Portfolio_Project
             services.AddDbContext<PortfolioContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("PortfolioContext"))
             );
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, Services.MailService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
