@@ -1,2 +1,66 @@
-﻿@{
+﻿@model ContactViewModel
+@{
+    ViewData["Title"] = "Contact Me";
 }
+<head>
+    <link rel="stylesheet" href="~/css/Contact.css" />
+    <link rel="stylesheet" href="~/css/PopupButtons.css" />
+    <script type="text/javascript" src="~/js/UserValidation.js"></script>
+    <title>@ViewData["Title"]</title>
+</head>
+<div class="container-fluid">
+    <div id="contactheading">
+        <h1>Contact Me</h1>
+        <div class="wrapper">
+            <div class="icon linkedin">
+                <div class="tooltip">LinkedIn</div>
+                <span><i class="fab fa-linkedin-in"></i></span>
+            </div>
+            <div class="icon github">
+                <div class="tooltip">Github</div>
+                <span><i class="fab fa-github"></i></span>
+            </div>
+            <div class="icon gmail">
+                <div class="tooltip">
+                    <div class="d-flex">
+                        <span style="color: #4285f4">G</span>
+                        <span style="color: #ea4335">m</span>
+                        <span style="color: #fbbc04">a</span>
+                        <span style="color: #4285f4">i</span>
+                        <span style="color: #34a853">l</span>
+                    </div>
+                </div>
+                <span><i class="gmail-icon"></i></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <form id="contactform" method="post" asp-controller="Contact" asp-action="SendEmail">
+        <div id="main">
+            <h2>Send me a Message</h2>
+            <div class="form-group">
+                <label asp-for="Name" class="required">Name</label>
+                <input asp-for="Name" type="text" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="required">E-mail</label>
+                <input asp-for="Email" type="text" placeholder="JohnDoe@nicholasnewton.net">
+            </div>
+            <div class="form-group">
+                <label asp-for="Company">Company</label>
+                <input asp-for="Company" type="text" placeholder="ex: company">
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber">Phone Number</label>
+                <input asp-for="PhoneNumber" type="text" placeholder="(888) 888-8888" oninput="phoneNumberFormatter(this)">
+            </div>
+            <div class="form-group" id="message">
+                <label asp-for="Message" class="required">Message</label>
+                <textarea asp-for="Message"></textarea>
+            </div>
+            <button class="btn-danger btn" type="reset">Cancel <i class="fas fa-times"></i></button>
+            <button class="btn btn-success float-right" type="submit">Send <i class="fas fa-paper-plane"></i></button>
+        </div>
+    </form>
+</div>

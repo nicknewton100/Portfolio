@@ -4,6 +4,7 @@ body{
 }
 #container {
     background: url(/images/Background.jpg);
+    background: -webkit-image-set(url(/images/Background.webp) 1x, url(/images/Background.jpg) 1x);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -11,7 +12,7 @@ body{
     height: 100%;
     max-height: 100%;
     min-height: 100vh;
-    background-color: black;
+    background-color: #131313;
     overflow: auto;
 }
 header{

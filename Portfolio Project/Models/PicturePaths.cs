@@ -13,5 +13,6 @@ namespace Portfolio_Project.Models
         public int ProjectID { get; set; }
         public Projects Project { get; set; }
         public string Path { get; set; }
+        public bool IsThumbnail { get; set; }
     }
 }

@@ -1,35 +1,66 @@
-﻿@{
+﻿@model List<Projects>
+@{
     ViewData["Title"] = "Projects";
+    
 }
 <head>
     <link rel="stylesheet" href="~/css/Projects.css" />
+    <link rel="stylesheet" href="~/css/buttons.css" />
     <title>@ViewData["Title"]</title>
 </head>
 <h1>Projects</h1>
 <div class="container-fluid">
     <div id="tagholder" class="flex-row row">
-        <button class="activetag">Show All</button>
-        <button>HTML</button>
-        <button>CSS</button>
-        <button>Javascript</button>
-        <button>C#</button>
-        <button>ASP.NET Core</button>
-        <button>MSSQL</button>
-        <button>Java</button>
-        <button>JavaFX</button>
-        <button>Python</button>
-        <button>C++</button>
-        <button>GitHub</button>
+        <form method="get" asp-action="Index">
+            <button class="button button-3d button-inverse button-pill" id="ShowAll">Show All</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="HTML" name="sortby">HTML</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="CSS" name="sortby">CSS</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="Javascript" name="sortby">Javascript</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="C#" name="sortby">C#</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="ASP.Net Core" name="sortby">ASP.NET Core</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="MSSQL" name="sortby">MSSQL</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="Java" name="sortby">Java</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="JavaFX" name="sortby">JavaFX</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="Python" name="sortby">Python</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="C++" name="sortby">C++</button>
+            <button class="button button-3d button-inverse button-pill" type="submit" value="Github" name="sortby">GitHub</button>
+        </form>
     </div>
-    
+
 </div>
 <div class="container-fluid">
     <div id="projectholder" class="flex-row row">
-        <a href="" target="_blank">
-            <img src="~/images/Uno-JavaFX.jpg" />
-        </a>
-        <a href="" target="_blank">
-            <img src="~/images/Uno-JavaFX.jpg" />
-        </a>
+        @foreach (var project in Model)
+        {
+            string path = project.PicturePaths.FirstOrDefault().Path.Replace("~", "");
+            <div class="card card-shadow">
+                <div class="card-header">
+                    <img class="" src="@path" />
+                </div>
+                <div class="card-body">
+                    @Html.Raw(project.ShortDesc)
+                </div>
+                <div class="card-footer">
+                    <a asp-controller="Projects" asp-action="Details" asp-route-name="@project.Name" class="card-link">Read more</a>
+                </div>
+            </div>
+        }
+
     </div>
 </div>
+
+<script type="text/javascript">
+    var sortby = '@Html.Raw(ViewBag.sortby)';
+    if (sortby != '') {
+        var button = document.getElementsByTagName('button')
+        for (let i = 0; i < button.length; i++) {
+            if (button[i].value == sortby) {
+                button[i].classList.add('is-active')
+            }
+        }
+    }
+    else {
+        document.getElementById('ShowAll').classList.add('is-active')
+    }
+</script>
+

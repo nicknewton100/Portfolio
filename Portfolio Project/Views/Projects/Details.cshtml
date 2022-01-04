@@ -1,0 +1,78 @@
+﻿@model Projects
+@{
+    ViewData["Title"] = Model.Name.ToString();
+    var thumbnail = Model.PicturePaths.Where(pp => pp.IsThumbnail == true).FirstOrDefault();
+}
+<head>
+    <link rel="stylesheet" href="~/css/ProjectDetails.css" />
+    <link rel="stylesheet" href="~/css/PopupButtons.css" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+</head>
+<div class="container-fluid">
+    
+    <div class="information">
+        <div class="flex-row d-flex justify-content-between">
+            <h1>@Model.Name</h1>
+            <div class="wrapper">
+                <div class="icon website">
+                    <div class="tooltip" style="width:98px;">Visit Website</div>
+                    <span><i class="fas fa-external-link-alt"></i></span>
+                </div>
+            </div>            
+        </div>
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                @foreach (var picture in Model.PicturePaths)
+                {
+                    <div class="swiper-slide" style="background-image:url(@picture.Path); background-size:contain; background-position:center; background-repeat:no-repeat;">Slide 1</div>
+                    <div class="swiper-slide">Slide 2</div>
+                    <div class="swiper-slide">Slide 3</div>
+                }
+                ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+        <h2>About This Project</h2>
+        @Html.Raw(Model.About)
+        <h2>Technical Specifications</h2>
+        @Html.Raw(Model.TechnicalSpecs)
+        <h2>Resources</h2>
+        <ul>
+            <li>Github Repository - <a href="@Model.GithubLink" target="_blank">@Model.GithubLink</a></li>
+        </ul>
+    </div>  
+</div>
+<script type="text/javascript">
+    const swiper = new Swiper('.swiper', {
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+    });
+</script>
+

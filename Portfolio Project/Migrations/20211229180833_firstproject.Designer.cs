@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Portfolio_Project.Models;
 
 namespace Portfolio_Project.Migrations
 {
     [DbContext(typeof(PortfolioContext))]
-    partial class PortfolioContextModelSnapshot : ModelSnapshot
+    [Migration("20211229180833_firstproject")]
+    partial class firstproject
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,9 +27,6 @@ namespace Portfolio_Project.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("IsThumbnail")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Path")
                         .HasColumnType("nvarchar(max)");
 
@@ -39,22 +38,6 @@ namespace Portfolio_Project.Migrations
                     b.HasIndex("ProjectID");
 
                     b.ToTable("PicturePaths");
-
-                    b.HasData(
-                        new
-                        {
-                            PictureID = 1,
-                            IsThumbnail = true,
-                            Path = "/images/Nonpawfit.jpg",
-                            ProjectID = 1
-                        },
-                        new
-                        {
-                            PictureID = 2,
-                            IsThumbnail = true,
-                            Path = "/images/Uno-JavaFX.jpg",
-                            ProjectID = 2
-                        });
                 });
 
             modelBuilder.Entity("Portfolio_Project.Models.Project_Tags", b =>
@@ -120,24 +103,6 @@ namespace Portfolio_Project.Migrations
                             Project_TagsID = 7,
                             ProjectID = 1,
                             TagID = 11
-                        },
-                        new
-                        {
-                            Project_TagsID = 8,
-                            ProjectID = 2,
-                            TagID = 2
-                        },
-                        new
-                        {
-                            Project_TagsID = 9,
-                            ProjectID = 2,
-                            TagID = 7
-                        },
-                        new
-                        {
-                            Project_TagsID = 10,
-                            ProjectID = 2,
-                            TagID = 8
                         });
                 });
 
@@ -177,18 +142,7 @@ namespace Portfolio_Project.Migrations
                             About = "<p>Non-Paw-Fit Animal Rescue is a web application developed in ASP.Net Core with the purpose of being able to manage a nonprofit&#39;s user accounts(employee and customer), donations, memberships, committies, event calendar, and also generate formatted reports.</p> <p>&nbsp;</p> <p>This project was created in collaboration with 4 other group members at Greenville Technical College. I primarily worked on the backend of the application however, I have touched nearly every corner of this project.</p>",
                             GithubLink = "https://github.com/thomasonbd/NonProfitProject",
                             Name = "Non-Paw-Fit Animal Rescue",
-                            ShortDesc = "<p>Non-Paw-Fit Animal Rescue is a database management website with logins, donations, users, etc.</p>",
                             TechnicalSpecs = "<ul><li>ASP.Net Core v3.0</li><li>C#</li><li>Entity Framework Core</li><li>MSSQL</li><li>HTML/CSS</li><li>Github</li><li>Sourcetree</li><li>Azure Portal</li><li>Visual Studio</li><li>Javascript</li><li>Fast Report</li></ul>",
-                            WebLink = ""
-                        },
-                        new
-                        {
-                            ProjectID = 2,
-                            About = "<p>Uno JavaFX is the game of Uno where you will face against an AI to see who will win. This game was created in collaboration with 2 other teammebers at greenville technical college using JavaFX. I mainly worked on the backend of the project creating all of the game logic and the AI however, some parts of the visuals I&nbsp;worked on as well.</p>",
-                            GithubLink = "",
-                            Name = "Uno JavaFX",
-                            ShortDesc = "<p>Uno JavaFX is an Uno game where you face against an AI opponent.</p>",
-                            TechnicalSpecs = "<ul><li>Java</li><li>JavaFX</li><li>CSS</li><li>IntelliJ</li></ul>",
                             WebLink = ""
                         });
                 });

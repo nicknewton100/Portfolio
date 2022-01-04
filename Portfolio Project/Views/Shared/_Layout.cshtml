@@ -9,6 +9,7 @@
     <title>@ViewData["Title"] - Portfolio_Project</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div id="container">
@@ -16,14 +17,14 @@
             <nav class="navbar">
                 <div class="navtext">
                     <div id="home" @(controller == "Home" ? "class=active" : "")>
-                        <a asp-controller="Home">Home</a>
+                        <a asp-controller="Home" asp-action="Index">Home</a>
                     </div>
                     <div id="rightnavcontainer">
                         <div id="projects" @(controller.Equals("Projects") ? "class=active" : "")>
-                            <a asp-controller="Projects">Projects</a>
+                            <a asp-controller="Projects" asp-action="Index">Projects</a>
                         </div>
                         <div id="contactme" @(controller.Equals("Contact") ? "class=active" : "")>
-                            <a asp-controller="Contact">Contact me</a>
+                            <a asp-controller="Contact" asp-action="Index">Contact me</a>
                         </div>
                     </div>
                 </div>

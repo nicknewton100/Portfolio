@@ -8,13 +8,13 @@ h1 {
     text-align: center;
     margin-top: 1em;
     font-size: 80px;
-    font-family: Montserrat-Regular;
+    font-family: Montserrat-SemiBold;
     text-shadow: 6px 6px 3.7px rgba(0, 0, 0, 0.25999999046325684);
 }
 #tagholder {
     width: 90%;
     max-width: 1200px;
-    margin: 3em 0em 5em 0em !important;
+    margin: 4em 0em 5em 0em !important;
     display: flex;
     justify-content:center;
 }
@@ -24,7 +24,7 @@ button {
     border: none;
     color: black;
     font-size:1.25em;
-    margin: 0em .3em 1em .3em;
+    margin: 0em .3em 1em .3em !important;
     border-radius: 15px;
     padding: 0 1.5%;
     box-shadow: 3px 4px 3.7px rgba(0, 0, 0, 0.25999999046325684);
@@ -32,12 +32,8 @@ button {
     transform:scale(.95) translateZ(0);
     transition:ease-in-out 200ms;
 }
-#tagholder button:hover:not(.activetag) {
-    background-color: #B5B5B5;
-}
-#tagholder button:active, .activetag {
-    color: white;
-    background-color: #4a4a4a !important;
+.button-3d:active, .button-3d.active, .button-3d.is-active {
+    transition-duration: 0s !important;
 }
 #tagholder button:focus {
     outline: none;
@@ -45,20 +41,52 @@ button {
 #projectholder {
     max-width: 60%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(1em, 24em));
+    grid-template-columns: repeat(auto-fill, minmax(1em, 25em));
     gap: 2.5em;
-    place-items:center;
+    place-items: center;
 }
-#projectholder img{    
-    width:24.24em;
-    box-shadow: 8px 10px 3.7px rgba(0, 0, 0, 0.25999999046325684);
-    transition: ease-in-out 500ms;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    transform:scale(.99);
+
+#projectholder img {
+    width: 24.24em;
+    height: 22.24em;
+    object-fit: cover;
 }
-#projectholder img:hover{
-    transform: scale(1) translate3d(0,0,0);
-    cursor:pointer;
-    box-shadow: 10px 12px 3.7px rgba(0, 0, 0, 0.25999999046325684);
+.card {
+    background-color: #171717;
+    box-shadow: 0px 20px 50px;
+    font-family: Montserrat-Regular;
+    max-height: 550px;
+}
+.card .card-header{
+    padding:1em 1em 0em 1em;    
+    border:none;
+}
+.card .card-header > img{
+    padding: 0;
+    margin: 0;
+    box-shadow: rgba(0,0,0,1) 30px 30px inset;
+}
+.card.card-shadow{
+    border:none;
+    box-shadow: 0 .4em .5em 0 rgba(0, 0, 0, .4)
+}
+.card .card-body{
+    color:white;    
+    height: 8em;
+    word-break:break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width:100%;
+}
+.card .card-footer{
+    display:flex;
+    justify-content:right;
+    padding:0 2em 0 0;
+    width:100%;
+    border:none;
+}
+.card .card-footer .links > a{
+    font-size: .7em;
+    margin:0 !important;
+    float:right;
 }

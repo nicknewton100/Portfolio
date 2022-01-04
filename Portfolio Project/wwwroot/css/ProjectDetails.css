@@ -1,0 +1,39 @@
+﻿@import url("Fonts.css");
+body{    
+    color: white;
+    font-family: Montserrat-SemiBold;
+    text-shadow: 5px 5px 3.7px rgba(0, 0, 0, 0.25999999046325684);
+}
+.container-fluid {
+    display: flex;
+    justify-content:center;
+}
+.information {
+    width: 90%;
+    max-width: 1300px;
+    margin: 5em 0 !important;
+    display: flex;
+    flex-direction: column;
+}
+h1 {
+    font-size: 3.5em; 
+}
+h2 {
+    margin: 1em 0em;
+    font-size: 3em;
+}
+ul{
+    list-style-position:inside;
+}
+p, li {
+    font-family: Montserrat-Regular;
+    margin:0em;
+    font-size: 2em;
+}
+.swiper {
+    width: 70em;
+    height: 30em;
+    margin: 2em 0em !important;
+    background-color: black;
+    text-align:center;
+}
