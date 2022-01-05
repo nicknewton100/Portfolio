@@ -27,6 +27,10 @@ namespace Portfolio_Project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
+
+            services.AddSession();
+
             services.AddControllersWithViews();
             //adds the database connection string
             services.AddDbContext<PortfolioContext>(options =>
@@ -34,6 +38,12 @@ namespace Portfolio_Project
             );
             services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
             services.AddTransient<IMailService, Services.MailService>();
+            //adds the appending trailing slash option and lowercase urls
+            services.AddRouting(options =>
+            {
+                options.AppendTrailingSlash = true;
+                options.LowercaseUrls = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +65,8 @@ namespace Portfolio_Project
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

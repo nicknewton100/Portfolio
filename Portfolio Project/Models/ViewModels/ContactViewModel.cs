@@ -15,6 +15,7 @@ namespace Portfolio_Project.Models.ViewModels
         public string Email { get; set; }
         public string Company { get; set; }
         [DataType(DataType.PhoneNumber)]
+        [StringLength(14,MinimumLength = 14,ErrorMessage = "Phone number invalid")]
         public string PhoneNumber { get; set; }
         [Required(ErrorMessage = "Please enter a Message")]
         public string Message { get; set; }

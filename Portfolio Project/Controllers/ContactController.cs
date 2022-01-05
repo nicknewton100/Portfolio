@@ -19,10 +19,15 @@ namespace Portfolio_Project.Controllers
         {
             return View();
         }
+        [HttpPost]
         public async Task<IActionResult> SendEmail(ContactViewModel model)
         {
-            await mailService.SendEmailAsync(model);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                await mailService.SendEmailAsync(model);
+                return RedirectToAction("Index");
+            }
+            return View("Index", model);
         }
     }
 }

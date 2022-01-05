@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Portfolio_Project.Models;
 
 namespace Portfolio_Project.Migrations
 {
     [DbContext(typeof(PortfolioContext))]
-    partial class PortfolioContextModelSnapshot : ModelSnapshot
+    [Migration("20220105174618_changedPictures")]
+    partial class changedPictures
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,42 +57,6 @@ namespace Portfolio_Project.Migrations
                             PictureID = 3,
                             Path = "/images/Uno-Game1.jpg",
                             ProjectID = 2
-                        },
-                        new
-                        {
-                            PictureID = 4,
-                            Path = "/images/Uno-Game2.jpg",
-                            ProjectID = 2
-                        },
-                        new
-                        {
-                            PictureID = 5,
-                            Path = "/images/Uno-Game3.jpg",
-                            ProjectID = 2
-                        },
-                        new
-                        {
-                            PictureID = 6,
-                            Path = "/images/Uno-Game4.jpg",
-                            ProjectID = 2
-                        },
-                        new
-                        {
-                            PictureID = 7,
-                            Path = "/images/Uno-Game5.jpg",
-                            ProjectID = 2
-                        },
-                        new
-                        {
-                            PictureID = 8,
-                            Path = "/images/NonPawFit-AdminDashboard.jpg",
-                            ProjectID = 1
-                        },
-                        new
-                        {
-                            PictureID = 9,
-                            Path = "/images/NonPawFit-AdminDashboardEvents.jpg",
-                            ProjectID = 1
                         });
                 });
 

@@ -26,18 +26,17 @@ namespace Portfolio_Project.Controllers
                 var tag = await context.Tags.Where(t => t.TagName.Equals(sortby))
                     .AsNoTracking()
                     .FirstOrDefaultAsync();
-                var projects = await context.Projects.Include(p => p.PicturePaths)
-                    .Where(p => p.PicturePaths.Any(pp => pp.IsThumbnail == true) && p.Project_Tags.Any(pt => pt.TagID == tag.TagID))
-                    .Select(p => new Projects { Name = p.Name, ShortDesc = p.ShortDesc, PicturePaths = p.PicturePaths })
+                var projects = await context.Projects
+                    .Where(p => p.Project_Tags.Any(pt => pt.TagID == tag.TagID))
+                    .Select(p => new Projects { Name = p.Name, ShortDesc = p.ShortDesc, ThumbnailPath = p.ThumbnailPath })
                     .AsNoTracking()
                     .ToListAsync();
                 return View(projects);
             }
             else
             {
-                var projects = await context.Projects.Include(p => p.PicturePaths)
-                    .Where(p => p.PicturePaths.Any(pp => pp.IsThumbnail == true))
-                    .Select(p => new Projects { Name = p.Name, ShortDesc = p.ShortDesc, PicturePaths = p.PicturePaths })
+                var projects = await context.Projects
+                    .Select(p => new Projects { Name = p.Name, ShortDesc = p.ShortDesc, ThumbnailPath = p.ThumbnailPath})
                     .AsNoTracking()
                     .ToListAsync();
                 return View(projects);

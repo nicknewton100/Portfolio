@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="~/css/PopupButtons.css" />
     <script type="text/javascript" src="~/js/UserValidation.js"></script>
     <title>@ViewData["Title"]</title>
+    @section scripts{
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
 </head>
 <div class="container-fluid">
     <div id="contactheading">
@@ -36,31 +39,37 @@
     </div>
 </div>
 <div class="container-fluid">
-    <form id="contactform" method="post" asp-controller="Contact" asp-action="SendEmail">
+    <form method="post" asp-action="SendEmail"  id="contactform">
         <div id="main">
             <h2>Send me a Message</h2>
             <div class="form-group">
                 <label asp-for="Name" class="required">Name</label>
-                <input asp-for="Name" type="text" placeholder="John Doe">
+                <input asp-for="Name"placeholder="John Doe">
+                <span asp-validation-for="Name" class="text-danger p-2"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Email" class="required">E-mail</label>
-                <input asp-for="Email" type="text" placeholder="JohnDoe@nicholasnewton.net">
+                <input asp-for="Email" placeholder="JohnDoe@nicholasnewton.net">
+                <span asp-validation-for="Email" class="text-danger p-2"></span>
             </div>
+            
             <div class="form-group">
                 <label asp-for="Company">Company</label>
-                <input asp-for="Company" type="text" placeholder="ex: company">
+                <input asp-for="Company" placeholder="ex: company">
             </div>
             <div class="form-group">
-                <label asp-for="PhoneNumber">Phone Number</label>
-                <input asp-for="PhoneNumber" type="text" placeholder="(888) 888-8888" oninput="phoneNumberFormatter(this)">
+                <label asp-for="PhoneNumber">Phone</label>
+                <input asp-for="PhoneNumber" placeholder="(888) 888-8888" oninput="phoneNumberFormatter(this)">
+                <span asp-validation-for="PhoneNumber" class="text-danger p-4"></span>
             </div>
             <div class="form-group" id="message">
                 <label asp-for="Message" class="required">Message</label>
                 <textarea asp-for="Message"></textarea>
+                <span asp-validation-for="Message" class="text-danger p-2"></span>
             </div>
+            
             <button class="btn-danger btn" type="reset">Cancel <i class="fas fa-times"></i></button>
-            <button class="btn btn-success float-right" type="submit">Send <i class="fas fa-paper-plane"></i></button>
+            <button type="submit" class="btn btn-success float-right" >Send <i class="fas fa-paper-plane"></i></button>
         </div>
     </form>
 </div>

@@ -1,7 +1,6 @@
 ﻿@model Projects
 @{
     ViewData["Title"] = Model.Name.ToString();
-    var thumbnail = Model.PicturePaths.Where(pp => pp.IsThumbnail == true).FirstOrDefault();
 }
 <head>
     <link rel="stylesheet" href="~/css/ProjectDetails.css" />
@@ -14,13 +13,15 @@
     
     <div class="information">
         <div class="flex-row d-flex justify-content-between">
-            <h1>@Model.Name</h1>
-            <div class="wrapper">
-                <div class="icon website">
-                    <div class="tooltip" style="width:98px;">Visit Website</div>
-                    <span><i class="fas fa-external-link-alt"></i></span>
-                </div>
-            </div>            
+            <div class="title">
+                <h1>@Model.Name</h1>
+                    <div class="wrapper">
+                        <div class="icon website">
+                            <div class="tooltip" style="width:98px;">Visit Website</div>
+                            <span><i class="fas fa-external-link-alt"></i></span>
+                        </div>
+                    </div>
+            </div>          
         </div>
         <!-- Slider main container -->
         <div class="swiper">
@@ -29,9 +30,7 @@
                 <!-- Slides -->
                 @foreach (var picture in Model.PicturePaths)
                 {
-                    <div class="swiper-slide" style="background-image:url(@picture.Path); background-size:contain; background-position:center; background-repeat:no-repeat;">Slide 1</div>
-                    <div class="swiper-slide">Slide 2</div>
-                    <div class="swiper-slide">Slide 3</div>
+                    <div class="swiper-slide" style="background-image:url(@picture.Path);"></div>
                 }
                 ...
             </div>
@@ -51,6 +50,10 @@
         @Html.Raw(Model.TechnicalSpecs)
         <h2>Resources</h2>
         <ul>
+            @if (!String.IsNullOrEmpty(Model.WebLink))
+            {
+                <li>Website Link - <a href="@Model.WebLink" target="_blank">@Model.WebLink</a></li>
+            }
             <li>Github Repository - <a href="@Model.GithubLink" target="_blank">@Model.GithubLink</a></li>
         </ul>
     </div>  

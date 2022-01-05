@@ -32,10 +32,9 @@
     <div id="projectholder" class="flex-row row">
         @foreach (var project in Model)
         {
-            string path = project.PicturePaths.FirstOrDefault().Path.Replace("~", "");
             <div class="card card-shadow">
                 <div class="card-header">
-                    <img class="" src="@path" />
+                    <img class="" src="@project.ThumbnailPath" />
                 </div>
                 <div class="card-body">
                     @Html.Raw(project.ShortDesc)
@@ -48,19 +47,4 @@
 
     </div>
 </div>
-
-<script type="text/javascript">
-    var sortby = '@Html.Raw(ViewBag.sortby)';
-    if (sortby != '') {
-        var button = document.getElementsByTagName('button')
-        for (let i = 0; i < button.length; i++) {
-            if (button[i].value == sortby) {
-                button[i].classList.add('is-active')
-            }
-        }
-    }
-    else {
-        document.getElementById('ShowAll').classList.add('is-active')
-    }
-</script>
 

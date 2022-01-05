@@ -10,6 +10,7 @@ namespace Portfolio_Project.Models
     {
         [Key]
         public int ProjectID { get; set; }
+        public string ThumbnailPath { get; set; }
         public string Name { get; set; }
         public string ShortDesc { get; set; }
         public string About { get; set; }
