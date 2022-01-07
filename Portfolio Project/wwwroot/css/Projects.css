@@ -76,13 +76,15 @@ button {
     max-width:100%;
 }
 .card .card-footer{
-    display:flex;
-    justify-content:right;
     padding:0 2em 0 0;
     width:100%;
     border:none;
 }
-.card .card-footer .links > a{
+.card .card-footer .card-link{
+    float:right;
+}
+.card .card-footer > a{
+    width:100%;
     font-size: .7em;
     margin:0 !important;
     float:right;
