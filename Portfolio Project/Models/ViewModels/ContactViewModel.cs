@@ -11,7 +11,7 @@ namespace Portfolio_Project.Models.ViewModels
         [Required(ErrorMessage ="Please enter Name")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Please enter valid E-mail")]
-        [DataType(DataType.EmailAddress)]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Please enter valid E-mail")]
         public string Email { get; set; }
         public string Company { get; set; }
         [DataType(DataType.PhoneNumber)]

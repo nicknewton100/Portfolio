@@ -49,7 +49,7 @@ h1 {
 #contactform {
     background-color: #131313;
     width: 100%;
-    height: 53em;
+    height: fit-content;
     max-width: 1150px;
     border-radius: .7em;
     font-family: Montserrat-Regular;
@@ -93,6 +93,205 @@ textarea{
 button{
     font-size:1.5em !important;
 }
-span{
-    padding:0;
+#send {
+    float: right;
 }
+span{
+    padding: .4em;
+}
+@media only screen and (max-width:1300px) {
+    #contactheading {
+        margin: 3.5em 0em 3em 0em !important;
+        width: 80%;
+    }
+    h1 {
+        font-size: 4em;
+    }
+    .wrapper .icon {
+        font-size: 2.5em !important;
+    }
+    #contactform {
+        width: 80%;
+    }
+    #main{
+        margin:1.75em 4em;
+    }
+    h2 {
+        font-size: 2.4em;
+        letter-spacing: .3em;
+        margin-bottom: 1.2em;
+    }
+    .form-group {
+        margin-bottom: 1.5em;
+    }
+    label {
+        font-size: 1.24em;
+    }
+    input, textarea {
+        font-size: 1.1em;
+    }
+    #message {
+        height: 11em;
+    }
+    button {
+        font-size: 1em !important;
+    }
+    span {
+        font-size: .8em;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    h1 {
+        font-size: 3em;
+    }
+    .wrapper .icon {
+        font-size: 1.9em !important;
+    }
+    h2 {
+        font-size: 1.7em;
+        margin-bottom: 1em;
+    }
+    .form-group {
+        margin-bottom: 1.2em;
+    }
+    label {
+        font-size: 1em;
+    }
+    input, textarea {
+        font-size: .8em;
+    }
+    #message {
+        height: 10em;
+    }
+    button {
+        font-size: .8em !important;
+    }
+    span {
+        font-size: .75em;
+    }
+}
+
+@media only screen and (max-width:850px) {
+    #contactheading {
+        width: 85%;
+    }
+    #main{
+        width: 77.5%;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    .wrapper .icon {
+        font-size: 1.7em !important;
+    }
+    #contactform {
+        width: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    }
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 1.2em;
+    }
+    .form-group {
+        margin-bottom: .5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;       
+    }
+    label {
+        font-size: 1.1em;
+    }
+    input, textarea {
+        font-size: .9em;
+        float: none;
+        width:100%;
+    }
+    button {
+        font-size: 1.1em !important;
+        max-width:fit-content;
+    }
+    span {
+        font-size: .9em;
+        padding: 0 !important;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    #contactheading {
+        width: 90%;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
+    .wrapper .icon {
+        font-size: 1.4em !important;
+    }
+    #contactform {
+        width: 90%;
+    }
+    h2 {
+        font-size: 1.2em;
+        margin-bottom: 1.2em;
+    }
+    label {
+        font-size: 1em;
+    }
+    input, textarea {
+        font-size: .8em;
+    }
+    #message {
+        height: 10em;
+    }
+    button {
+        font-size: 1em !important;
+    }
+    span {
+        font-size: .8em;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    #contactheading {
+        margin: 1.7em 0em 1.5em 0em !important;
+    }
+    h1 {
+        font-size: 1.7em;
+    }
+    .wrapper{
+        width: 40%;
+    }
+    .wrapper .icon {
+        font-size: 1.2em !important;
+    }
+    h2 {
+        font-size: .9em;
+        margin-bottom: 1em;
+    }
+    label {
+        font-size: .7em;
+    }
+    input, textarea {
+        font-size: .6em;
+    }
+    #message {
+        height: 9em;
+    }
+    button {
+        font-size: .8em !important;
+    }
+    span {
+        font-size: .7em;
+    }
+}
+
+
+/*
+@media only screen and (max-height:1250px) {
+    #contactheading {
+        margin: 4em 0em 3em 0em !important;
+    }
+}*/
