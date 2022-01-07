@@ -15,13 +15,16 @@
         <div class="flex-row d-flex justify-content-between">
             <div class="title">
                 <h1>@Model.Name</h1>
+                @if (!String.IsNullOrEmpty(Model.WebLink))
+                {
                     <div class="wrapper">
                         <div class="icon website">
                             <div class="tooltip" style="width:98px;">Visit Website</div>
                             <span><i class="fas fa-external-link-alt"></i></span>
                         </div>
                     </div>
-            </div>          
+                }
+                </div>          
         </div>
         <!-- Slider main container -->
         <div class="swiper">
