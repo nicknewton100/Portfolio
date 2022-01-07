@@ -9,8 +9,8 @@ using Portfolio_Project.Models;
 namespace Portfolio_Project.Migrations
 {
     [DbContext(typeof(PortfolioContext))]
-    [Migration("20211230163128_addedUno")]
-    partial class addedUno
+    [Migration("20220107192817_InitialMigrationAgainToFixErrors")]
+    partial class InitialMigrationAgainToFixErrors
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,9 +26,6 @@ namespace Portfolio_Project.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("IsThumbnail")
-                        .HasColumnType("bit");
 
                     b.Property<string>("Path")
                         .HasColumnType("nvarchar(max)");
@@ -46,16 +43,56 @@ namespace Portfolio_Project.Migrations
                         new
                         {
                             PictureID = 1,
-                            IsThumbnail = true,
                             Path = "/images/Nonpawfit.jpg",
                             ProjectID = 1
                         },
                         new
                         {
                             PictureID = 2,
-                            IsThumbnail = true,
-                            Path = "/images/Uno-JavaFX.jpg",
+                            Path = "/images/Uno-Slides.jpg",
                             ProjectID = 2
+                        },
+                        new
+                        {
+                            PictureID = 3,
+                            Path = "/images/Uno-Game1.jpg",
+                            ProjectID = 2
+                        },
+                        new
+                        {
+                            PictureID = 4,
+                            Path = "/images/Uno-Game2.jpg",
+                            ProjectID = 2
+                        },
+                        new
+                        {
+                            PictureID = 5,
+                            Path = "/images/Uno-Game3.jpg",
+                            ProjectID = 2
+                        },
+                        new
+                        {
+                            PictureID = 6,
+                            Path = "/images/Uno-Game4.jpg",
+                            ProjectID = 2
+                        },
+                        new
+                        {
+                            PictureID = 7,
+                            Path = "/images/Uno-Game5.jpg",
+                            ProjectID = 2
+                        },
+                        new
+                        {
+                            PictureID = 8,
+                            Path = "/images/NonPawFit-AdminDashboard.jpg",
+                            ProjectID = 1
+                        },
+                        new
+                        {
+                            PictureID = 9,
+                            Path = "/images/NonPawFit-AdminDashboardEvents.jpg",
+                            ProjectID = 1
                         });
                 });
 
@@ -165,6 +202,9 @@ namespace Portfolio_Project.Migrations
                     b.Property<string>("TechnicalSpecs")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ThumbnailPath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("WebLink")
                         .HasColumnType("nvarchar(max)");
 
@@ -179,7 +219,9 @@ namespace Portfolio_Project.Migrations
                             About = "<p>Non-Paw-Fit Animal Rescue is a web application developed in ASP.Net Core with the purpose of being able to manage a nonprofit&#39;s user accounts(employee and customer), donations, memberships, committies, event calendar, and also generate formatted reports.</p> <p>&nbsp;</p> <p>This project was created in collaboration with 4 other group members at Greenville Technical College. I primarily worked on the backend of the application however, I have touched nearly every corner of this project.</p>",
                             GithubLink = "https://github.com/thomasonbd/NonProfitProject",
                             Name = "Non-Paw-Fit Animal Rescue",
+                            ShortDesc = "<p>Non-Paw-Fit Animal Rescue is a database management website with logins, donations, users, etc.</p>",
                             TechnicalSpecs = "<ul><li>ASP.Net Core v3.0</li><li>C#</li><li>Entity Framework Core</li><li>MSSQL</li><li>HTML/CSS</li><li>Github</li><li>Sourcetree</li><li>Azure Portal</li><li>Visual Studio</li><li>Javascript</li><li>Fast Report</li></ul>",
+                            ThumbnailPath = "/images/Nonpawfit.jpg",
                             WebLink = ""
                         },
                         new
@@ -188,7 +230,9 @@ namespace Portfolio_Project.Migrations
                             About = "<p>Uno JavaFX is the game of Uno where you will face against an AI to see who will win. This game was created in collaboration with 2 other teammebers at greenville technical college using JavaFX. I mainly worked on the backend of the project creating all of the game logic and the AI however, some parts of the visuals I&nbsp;worked on as well.</p>",
                             GithubLink = "",
                             Name = "Uno JavaFX",
+                            ShortDesc = "<p>Uno JavaFX is an Uno game where you face against an AI opponent.</p>",
                             TechnicalSpecs = "<ul><li>Java</li><li>JavaFX</li><li>CSS</li><li>IntelliJ</li></ul>",
+                            ThumbnailPath = "/images/Uno-JavaFX.jpg",
                             WebLink = ""
                         });
                 });
