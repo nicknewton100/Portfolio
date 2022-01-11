@@ -4,7 +4,7 @@
     justify-content: center;
 }
 #contactheading {
-    width: 90%;
+    width: 80%;
     max-width: 1200px;
     margin: 8em 0em 4em 0em !important;
     justify-content:space-between;
@@ -33,6 +33,9 @@ h1 {
 }
 .wrapper .tooltip{
     font-size:.5em !important;
+}
+.wrapper .tooltip span {
+    padding: 0em;
 }
 .gmail-icon::before {
     display: flex;
@@ -90,52 +93,64 @@ textarea{
 #message{
     height: 14em;
 }
+#contactform span{
+    padding: .4em;
+}
 button{
     font-size:1.5em !important;
 }
 #send {
     float: right;
 }
-span{
-    padding: .4em;
-}
+
 @media only screen and (max-width:1300px) {
     #contactheading {
         margin: 3.5em 0em 3em 0em !important;
         width: 80%;
     }
+
     h1 {
         font-size: 4em;
     }
+
     .wrapper .icon {
         font-size: 2.5em !important;
     }
+
     #contactform {
         width: 80%;
     }
-    #main{
-        margin:1.75em 4em;
+
+    #main {
+        margin: 1.75em 4em;
     }
+
     h2 {
         font-size: 2.4em;
         letter-spacing: .3em;
         margin-bottom: 1.2em;
     }
+
     .form-group {
         margin-bottom: 1.5em;
     }
+
     label {
         font-size: 1.24em;
     }
+
     input, textarea {
         font-size: 1.1em;
     }
+
     #message {
         height: 11em;
     }
+
     button {
         font-size: 1em !important;
     }
+
     span {
         font-size: .8em;
     }
@@ -288,10 +303,51 @@ span{
     }
 }
 
-
-/*
-@media only screen and (max-height:1250px) {
+@media only screen and (max-height:1205px) and (min-width:1300px) {
     #contactheading {
-        margin: 4em 0em 3em 0em !important;
+        margin: 3em 0em 3em 0em !important;
+        max-width:975px
     }
-}*/
+
+    h1 {
+        font-size: 4em;
+    }
+
+    .wrapper .icon {
+        font-size: 2.2em !important;
+    }
+
+    #contactform {
+        max-width: 975px
+    }
+
+    h2 {
+        font-size: 2.7em;
+        letter-spacing: .3em;
+        margin-bottom: 1em;
+    }
+
+    .form-group {
+        margin-bottom: 1.3em;
+    }
+
+    label {
+        font-size: 1.5em;
+    }
+
+    input, textarea {
+        font-size: 1em;
+    }
+
+    #message {
+        height: 11.5em;
+    }
+
+    button {
+        font-size: 1.2em !important;
+    }
+
+    span {
+        font-size: .85em;
+    }
+}

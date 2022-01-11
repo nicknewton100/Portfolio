@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Portfolio_Project.Models;
 using Portfolio_Project.Models.Settings;
 using Portfolio_Project.Services;
+using Microsoft.Net.Http.Headers;
 
 namespace Portfolio_Project
 {
@@ -60,7 +61,15 @@ namespace Portfolio_Project
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles(new StaticFileOptions 
+            { 
+                OnPrepareResponse = ctx =>
+                {
+                    const int durationInSeconds = 60 * 60 * 24;
+                    ctx.Context.Response.Headers[HeaderNames.CacheControl] =
+                        "public,max-age=" + durationInSeconds;
+                }
+            });
 
             app.UseRouting();
 

@@ -113,6 +113,14 @@ button {
         max-width: 100%;
     }
 }
+@media only screen and (max-width: 1200px){
+    #tagholder form {
+        display: flex;
+        justify-content: center; /* horizontal */
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
 @media only screen and (max-width:700px) {
     h1 {
         margin-top: .75em;
@@ -124,7 +132,7 @@ button {
     }
 
     button {
-        font-size: .8em !important;
+        font-size: .85em !important;
         width: none !important;
         line-height:1em !important;
         height:3em !important;
@@ -146,7 +154,7 @@ button {
         font-size: 3em;
     }
     button {
-        font-size: .8em !important;
+        font-size:.77em;
         width: none !important;
         padding:1em !important;
     }
