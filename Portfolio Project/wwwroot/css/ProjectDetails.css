@@ -2,27 +2,31 @@
 body{    
     color: white;
     font-family: Montserrat-SemiBold;
-    text-shadow: 5px 5px 3.7px rgba(0, 0, 0, 0.25999999046325684);
 }
 .container-fluid {
     display: flex;
     justify-content:center;
 }
 .information {
-    width: 90%;
-    max-width: 1100px;
-    margin: 5em 0 !important;
+    width: 99%;
+    max-width: 1200px;
+    margin: 5em 0;
     display: flex;
     flex-direction: column;
+    justify-content:center;
 }
 .title {
     display: flex;
     justify-content:space-between;
     align-items: flex-end;
-    width: 98%;
+    vertical-align:middle;
+    width: 100%;
+}
+h1, h2, p, li {
+    text-shadow: 5px 5px 3.7px rgba(0, 0, 0, 0.25999999046325684);
 }
 h1 {
-    font-size: 4em; 
+    font-size: 3.75em; 
 }
 h2 {
     margin: 1em 0em;
@@ -37,15 +41,13 @@ p, li {
     font-size: 1.8em;
 }
 .swiper {
-    width: 67em;
-    height: 35em;
+    aspect-ratio:107/56;   
     margin: 2em 0em !important;
     background-color: black;
     text-align:center;
     box-shadow:10px 10px 4.017167568206787px rgba(0, 0, 0, 0.25999999046325684);
 }
 .swiper .swiper-slide{
-    aspect-ratio:16/9;
     background-size: cover; 
     background-position:center; 
     background-repeat:no-repeat;
@@ -54,7 +56,7 @@ p, li {
     color:black;
     width: 2em !important;
     height: 2em !important;
-    font-size: 2.3em !important;
+    font-size: 2em !important;
     border:solid gray;
     margin: 10px 0px !important;
 }
@@ -63,6 +65,58 @@ p, li {
     text-align:center;
     width:7em !important;
 }
-@media only screen and (max-width:1300px){
+a{
+    word-break:break-all;
+}
+@media only screen and (max-width:1275px){
+    .information{
+        margin-top:2.5em;
+    }
+    h1{
+        font-size: 3em;
+    }
+    .wrapper .icon{
+        font-size: 1.75em !important;
+    }
+    h2{
+        font-size: 2.25em;
+    }
+    p, li{
+        font-size:1.5em;
+    }
+}
+@media only screen and (max-width:850px) {
+    h1 {
+        font-size: 2em;
+    }
 
+    .wrapper .icon {
+        font-size: 1.25em !important;
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
+
+    p, li {
+        font-size: 1em;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    h1 {
+        font-size: 1.4em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+    p, li {
+        font-size: .9em;
+    }
+}
+
+@media only screen and (max-height: 1130px) and (min-width: 1275px) {
+    .information{
+        margin-top: 3em;
+    }
 }

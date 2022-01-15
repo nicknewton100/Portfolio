@@ -43,6 +43,7 @@ button {
     grid-template-columns: repeat(auto-fill, minmax(1em, 30em));
     gap: 1em;
     place-items: center;
+    margin-bottom:3em;
 }
 .card {
     background-color: #171717;
