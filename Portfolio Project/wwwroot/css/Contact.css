@@ -49,6 +49,10 @@ h1 {
 .wrapper .gmail:hover .gmail-icon::before {
     background-image: url(/images/Gmail_icon.svg);
 }
+.wrapper a{
+    text-decoration:none;
+    color:inherit;
+}
 #contactform {
     background-color: #131313;
     width: 100%;
@@ -57,6 +61,7 @@ h1 {
     border-radius: .7em;
     font-family: Montserrat-Regular;
     box-shadow: 9px 9px 6px rgba(0, 0, 0, 0.40);
+    margin-bottom:3em;
 }
 #main{
     margin: 2em 6em;
@@ -64,8 +69,8 @@ h1 {
 h2, label{
     color: #ffffff;
 }
-h2{
-    text-align:center;
+#contactform h2 {
+    text-align: center;
     letter-spacing: .4em;
     font-size: 2.7em;
     margin-bottom: 1.5em;
@@ -125,7 +130,7 @@ button{
         margin: 1.75em 4em;
     }
 
-    h2 {
+    #contactform h2 {
         font-size: 2.4em;
         letter-spacing: .3em;
         margin-bottom: 1.2em;
@@ -151,7 +156,7 @@ button{
         font-size: 1em !important;
     }
 
-    span {
+    #contactform span {
         font-size: .8em;
     }
 }
@@ -163,7 +168,7 @@ button{
     .wrapper .icon {
         font-size: 1.9em !important;
     }
-    h2 {
+    #contactform h2 {
         font-size: 1.7em;
         margin-bottom: 1em;
     }
@@ -182,7 +187,7 @@ button{
     button {
         font-size: .8em !important;
     }
-    span {
+    #contactform span {
         font-size: .75em;
     }
 }
@@ -207,7 +212,7 @@ button{
         justify-content: center;
         align-items:center;
     }
-    h2 {
+    #contactform h2 {
         font-size: 1.5em;
         margin-bottom: 1.2em;
     }
@@ -229,7 +234,7 @@ button{
         font-size: 1.1em !important;
         max-width:fit-content;
     }
-    span {
+    #contactform span {
         font-size: .9em;
         padding: 0 !important;
     }
@@ -248,7 +253,7 @@ button{
     #contactform {
         width: 90%;
     }
-    h2 {
+    #contactform h2 {
         font-size: 1.2em;
         margin-bottom: 1.2em;
     }
@@ -264,7 +269,7 @@ button{
     button {
         font-size: 1em !important;
     }
-    span {
+    #contactform span {
         font-size: .8em;
     }
 }
@@ -282,7 +287,7 @@ button{
     .wrapper .icon {
         font-size: 1.2em !important;
     }
-    h2 {
+    #contactform h2 {
         font-size: .9em;
         margin-bottom: 1em;
     }
@@ -298,7 +303,7 @@ button{
     button {
         font-size: .8em !important;
     }
-    span {
+    #contactform span {
         font-size: .7em;
     }
 }
@@ -321,7 +326,7 @@ button{
         max-width: 975px
     }
 
-    h2 {
+    #contactform h2 {
         font-size: 2.7em;
         letter-spacing: .3em;
         margin-bottom: 1em;
@@ -347,7 +352,7 @@ button{
         font-size: 1.2em !important;
     }
 
-    span {
+    #contactform span {
         font-size: .85em;
     }
 }

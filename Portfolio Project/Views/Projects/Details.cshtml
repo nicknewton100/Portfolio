@@ -18,10 +18,12 @@
                 @if (!String.IsNullOrEmpty(Model.WebLink))
                 {
                     <div class="wrapper">
-                        <div class="icon website">
-                            <div class="tooltip" style="width:98px;">Visit Website</div>
-                            <span><i class="fas fa-external-link-alt"></i></span>
-                        </div>
+                        <a href="@Model.WebLink" target="_blank">
+                            <div class="icon website">
+                                <div class="tooltip" style="width:98px;">Visit Website</div>
+                                <span><i class="fas fa-external-link-alt"></i></span>
+                            </div>
+                        </a>
                     </div>
                 }
                 </div>          
@@ -78,6 +80,7 @@
         // And if we need scrollbar
         scrollbar: {
             el: '.swiper-scrollbar',
+            hide: true,
         },
     });
 </script>

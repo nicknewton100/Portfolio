@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="~/css/Contact.css" />
     <link rel="stylesheet" href="~/css/PopupButtons.css" />
     <script type="text/javascript" src="~/js/UserValidation.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>@ViewData["Title"]</title>
     @section scripts{
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
@@ -15,26 +16,32 @@
     <div id="contactheading">
         <h1>Contact Me</h1>
         <div class="wrapper">
-            <div class="icon linkedin">
-                <div class="tooltip">LinkedIn</div>
-                <span><i class="fab fa-linkedin-in"></i></span>
-            </div>
-            <div class="icon github">
-                <div class="tooltip">Github</div>
-                <span><i class="fab fa-github"></i></span>
-            </div>
-            <div class="icon gmail">
-                <div class="tooltip">
-                    <div class="d-flex">
-                        <span style="color: #4285f4">G</span>
-                        <span style="color: #ea4335">m</span>
-                        <span style="color: #fbbc04">a</span>
-                        <span style="color: #4285f4">i</span>
-                        <span style="color: #34a853">l</span>
-                    </div>
+            <a href="https://www.linkedin.com/in/nicholas-newton-5b548122a/" target="_blank">
+                <div class="icon linkedin">
+                    <div class="tooltip">LinkedIn</div>
+                    <span><i class="fab fa-linkedin-in"></i></span>
                 </div>
-                <span><i class="gmail-icon"></i></span>
-            </div>
+            </a>
+            <a href="https://github.com/nicknewton100" target="_blank">
+                <div class="icon github">
+                    <div class="tooltip">Github</div>
+                    <span><i class="fab fa-github"></i></span>
+                </div>
+            </a>
+            <a href="mailto:nick.newton404@gmail.com" target="_blank">
+                <div class="icon gmail">
+                    <div class="tooltip">
+                        <div class="d-flex">
+                            <span style="color: #4285f4">G</span>
+                            <span style="color: #ea4335">m</span>
+                            <span style="color: #fbbc04">a</span>
+                            <span style="color: #4285f4">i</span>
+                            <span style="color: #34a853">l</span>
+                        </div>
+                    </div>
+                    <span><i class="gmail-icon"></i></span>
+                </div>
+            </a>
         </div>
     </div>
 </div>
@@ -69,7 +76,28 @@
             </div>
             
             <button class="btn-danger btn" type="reset">Cancel <i class="fas fa-times"></i></button>
-            <button id="send" type="submit" class="btn btn-success" >Send <i class="fas fa-paper-plane"></i></button>
+            <button id="send" type="submit" class="btn btn-success">Send <i class="fas fa-paper-plane"></i></button>
         </div>
     </form>
 </div>
+<script type="text/javascript">
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-right',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+
+
+    if ('@Html.Raw(TempData["Sent"]?.ToString())' == 'Sent') {
+        Toast.fire({
+            icon: 'success',
+            title: 'Email Sent'
+        })
+    }
+</script>

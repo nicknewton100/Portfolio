@@ -3,8 +3,8 @@ body{
     background-color:black;
 }
 #container {
-    background: url(/images/Background.jpg);
-    background: -webkit-image-set(url(/images/Background.webp) 1x, url(/images/Background.jpg) 1x);
+    background: url(/images/Background.jpg); 
+    background: -webkit-image-set(url(/images/Background.webp) type("image/webp"));
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -52,19 +52,32 @@ header{
     font-family: Montserrat-Regular;
     letter-spacing: 1.5px;
     text-shadow: 3px 3px 4.7px black;
-    transition: ease-in-out 500ms;
-    backface-visibility: hidden;
-    transform: translateZ(0);
+    -webkit-tap-highlight-color:darkgray;
 }
-.navtext a:hover {
-    transform: perspective(1px) scale(1.2) translate3d(0, 0, 0);
-    cursor: pointer;
-    text-decoration: none;
-}
+/*makes links underlined based on what page its on*/
 .active a {
     border-bottom: 2px solid white !important;
     box-shadow: 0px 5px 4px -4px black;
+}/**/
+@media (hover: hover) {
+    .navtext a {
+        transition: ease-in-out 500ms;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+    }
+    .navtext a:hover {
+        transform: perspective(1px) scale(1.2) translate3d(0, 0, 0);
+        cursor: pointer;
+        text-decoration: none;
+    }
 }
+
+@media (hover: none) {
+    .navtext a:active {
+        background-color: darkgrey;
+    }
+}
+
 @media (max-width: 1000px){
     #container {
         background-size: 1000px;
@@ -113,3 +126,4 @@ header{
         font-size: 140% !important;
     }
 }
+

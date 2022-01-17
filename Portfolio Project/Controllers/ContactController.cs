@@ -16,7 +16,7 @@ namespace Portfolio_Project.Controllers
             this.mailService = mailService;
         }
         public IActionResult Index()
-        {
+        {                       
             return View();
         }
         [HttpPost]
@@ -25,6 +25,7 @@ namespace Portfolio_Project.Controllers
             if (ModelState.IsValid)
             {
                 await mailService.SendEmailAsync(model);
+                TempData["Sent"] = "Sent";
                 return RedirectToAction("Index");
             }
             return View("Index", model);

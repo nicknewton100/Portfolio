@@ -162,7 +162,7 @@ button {
     p{
         font-size:.9em;
     }
-    a{
+    .card-footer a{
         font-size:.9em;
     }
 }

@@ -68,6 +68,11 @@ p, li {
 a{
     word-break:break-all;
 }
+.wrapper a {
+    text-decoration: none;
+    color: inherit;
+}
+
 @media only screen and (max-width:1275px){
     .information{
         margin-top:2.5em;
@@ -101,6 +106,15 @@ a{
     p, li {
         font-size: 1em;
     }
+    .swiper-pagination-bullet {
+        display:none !important;
+    }
+    .swiper-button-prev, .swiper-button-next{
+        width: 1em !important;
+    }
+    .swiper-button-prev:after, .swiper-button-next:after {
+        font-size: 30px !important;
+    }
 }
 
 @media only screen and (max-width:550px) {
@@ -112,6 +126,12 @@ a{
     }
     p, li {
         font-size: .9em;
+    }
+    .swiper-button-prev, .swiper-button-next {
+        width: .5em !important;
+    }
+    .swiper-button-prev:after, .swiper-button-next:after {
+        font-size: 25px !important;
     }
 }
 

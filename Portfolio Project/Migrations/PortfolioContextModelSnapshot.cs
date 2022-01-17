@@ -89,8 +89,62 @@ namespace Portfolio_Project.Migrations
                         new
                         {
                             PictureID = 9,
+                            Path = "/images/NonPawFit-AdminDashboardDonors.jpg",
+                            ProjectID = 1
+                        },
+                        new
+                        {
+                            PictureID = 10,
+                            Path = "/images/NonPawFit-AdminDashboardEmployees.jpg",
+                            ProjectID = 1
+                        },
+                        new
+                        {
+                            PictureID = 11,
+                            Path = "/images/NonPawFit-AdminDashboardMembership.jpg",
+                            ProjectID = 1
+                        },
+                        new
+                        {
+                            PictureID = 12,
                             Path = "/images/NonPawFit-AdminDashboardEvents.jpg",
                             ProjectID = 1
+                        },
+                        new
+                        {
+                            PictureID = 13,
+                            Path = "/images/NonPawFit-AdminDashboardNews.jpg",
+                            ProjectID = 1
+                        },
+                        new
+                        {
+                            PictureID = 14,
+                            Path = "/images/NonPawFit-AdminDashboardDonationCheckout.jpg",
+                            ProjectID = 1
+                        },
+                        new
+                        {
+                            PictureID = 16,
+                            Path = "/images/PortfolioHome.jpg",
+                            ProjectID = 3
+                        },
+                        new
+                        {
+                            PictureID = 17,
+                            Path = "/images/PortfolioProjects.jpg",
+                            ProjectID = 3
+                        },
+                        new
+                        {
+                            PictureID = 18,
+                            Path = "/images/PortfolioProjectsDetails.jpg",
+                            ProjectID = 3
+                        },
+                        new
+                        {
+                            PictureID = 19,
+                            Path = "/images/PortfolioContact.jpg",
+                            ProjectID = 3
                         });
                 });
 
@@ -175,6 +229,48 @@ namespace Portfolio_Project.Migrations
                             Project_TagsID = 10,
                             ProjectID = 2,
                             TagID = 8
+                        },
+                        new
+                        {
+                            Project_TagsID = 11,
+                            ProjectID = 3,
+                            TagID = 1
+                        },
+                        new
+                        {
+                            Project_TagsID = 12,
+                            ProjectID = 3,
+                            TagID = 2
+                        },
+                        new
+                        {
+                            Project_TagsID = 13,
+                            ProjectID = 3,
+                            TagID = 3
+                        },
+                        new
+                        {
+                            Project_TagsID = 14,
+                            ProjectID = 3,
+                            TagID = 4
+                        },
+                        new
+                        {
+                            Project_TagsID = 15,
+                            ProjectID = 3,
+                            TagID = 5
+                        },
+                        new
+                        {
+                            Project_TagsID = 16,
+                            ProjectID = 3,
+                            TagID = 6
+                        },
+                        new
+                        {
+                            Project_TagsID = 17,
+                            ProjectID = 3,
+                            TagID = 11
                         });
                 });
 
@@ -214,24 +310,35 @@ namespace Portfolio_Project.Migrations
                         new
                         {
                             ProjectID = 1,
-                            About = "<p>Non-Paw-Fit Animal Rescue is a web application developed in ASP.Net Core with the purpose of being able to manage a nonprofit&#39;s user accounts(employee and customer), donations, memberships, committies, event calendar, and also generate formatted reports.</p> <p>&nbsp;</p> <p>This project was created in collaboration with 4 other group members at Greenville Technical College. I primarily worked on the backend of the application however, I have touched nearly every corner of this project.</p>",
-                            GithubLink = "https://github.com/thomasonbd/NonProfitProject",
+                            About = "<p>Non-Paw-Fit Animal Rescue is a web application developed in ASP.Net Core with the purpose of being able to manage a nonprofit&#39;s user accounts(employee and customer), donations, memberships, committees, event calendar, and also generate formatted reports.</p> <p>&nbsp;</p> <p>This project was created in collaboration with 4 other group members at Greenville Technical College. I primarily worked on the backend of the application however, I have touched nearly every corner of this project.</p>",
+                            GithubLink = "https://github.com/nicknewton100/NonProfitProject",
                             Name = "Non-Paw-Fit Animal Rescue",
                             ShortDesc = "<p>Non-Paw-Fit Animal Rescue is a database management website with logins, donations, users, etc.</p>",
-                            TechnicalSpecs = "<ul><li>ASP.Net Core v3.0</li><li>C#</li><li>Entity Framework Core</li><li>MSSQL</li><li>HTML/CSS</li><li>Github</li><li>Sourcetree</li><li>Azure Portal</li><li>Visual Studio</li><li>Javascript</li><li>Fast Report</li></ul>",
+                            TechnicalSpecs = "<ul><li>ASP.Net Core v3.0</li><li>C#</li><li>Entity Framework Core</li><li>MSSQL</li><li>HTML/CSS</li><li>Javascript</li><li>Visual Studio</li><li>Azure Portal</li><li>Github</li><li>Sourcetree</li><li>Fast Report</li></ul>",
                             ThumbnailPath = "/images/Nonpawfit.jpg",
-                            WebLink = ""
+                            WebLink = "http://www.nonpawfit.net"
                         },
                         new
                         {
                             ProjectID = 2,
                             About = "<p>Uno JavaFX is the game of Uno where you will face against an AI to see who will win. This game was created in collaboration with 2 other teammebers at greenville technical college using JavaFX. I mainly worked on the backend of the project creating all of the game logic and the AI however, some parts of the visuals I&nbsp;worked on as well.</p>",
-                            GithubLink = "",
+                            GithubLink = "https://github.com/nicknewton100/Uno-JavaFX",
                             Name = "Uno JavaFX",
                             ShortDesc = "<p>Uno JavaFX is an Uno game where you face against an AI opponent.</p>",
                             TechnicalSpecs = "<ul><li>Java</li><li>JavaFX</li><li>CSS</li><li>IntelliJ</li></ul>",
                             ThumbnailPath = "/images/Uno-JavaFX.jpg",
                             WebLink = ""
+                        },
+                        new
+                        {
+                            ProjectID = 3,
+                            About = "<p>Nicholasnewton.net is a personal portfolio project developed in ASP.NET Core that is used to showcase my skills/projects associated with programming as well as give information about myself.</p>",
+                            GithubLink = "https://github.com/nicknewton100/Portfolio",
+                            Name = "Portfolio",
+                            ShortDesc = "<p>Nicholasnewton.net is a personal portfolio website used to showcase my skills/projects</p>",
+                            TechnicalSpecs = "<ul><li>ASP.Net Core v3.1</li><li>C#</li><li>Entity Framework Core</li><li>MSSQL</li><li>HTML/CSS</li><li>Javascript</li><li>Visual Studio</li><li>Github</li><li>Sourcetree</li></ul>",
+                            ThumbnailPath = "/images/PortfolioHomeThumbnail.jpg",
+                            WebLink = "https://www.nicholasnewton.net/"
                         });
                 });
 
